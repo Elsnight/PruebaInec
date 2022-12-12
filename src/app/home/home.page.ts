@@ -6,7 +6,6 @@ import { AlertController, LoadingController, ModalController } from '@ionic/angu
 import { GooglemapsComponent } from '../googlemaps/googlemaps.component';
 import { AuthService } from '../services/auth.service';
 import { AvatarService } from '../services/avatar.service';
-import { ChatService } from '../services/chat.service';
 import { FirestoreService } from '../services/firestore.service';
 import { InteractionService } from '../services/interaction.service';
 import { Datos } from './models/models';
@@ -24,9 +23,8 @@ export class HomePage {
   data: Datos = {
 
     informacionUsuario: {
-      nombre: 'miguel Cuenca',
-      cedula: '1724518087',
-      telefono: 983873954
+      nombre: '',
+      cedula: '',
     },
     informacionCensado: {
       nombre: '',
@@ -41,7 +39,6 @@ export class HomePage {
   newFile: any;
 
   constructor(
-    private chatService: ChatService,
     private avatarService: AvatarService,
     private authService: AuthService,
     private router: Router,
@@ -57,7 +54,6 @@ export class HomePage {
   }
 
   ngOnInit() {
-    console.log('dr crep la visra');
     this.getDatos();
 
   }
@@ -68,67 +64,44 @@ export class HomePage {
   }
 
 
-
-  // sendMessage() {
-  //   this.chatService.addChatMessage(this.newMsg).then(() => {
-  //     this.newMsg = '';
-  //     this.content.scrollToBottom();
-  //   });
-  // }
-
   signOut() {
     this.authService.logout().then(() => {
       this.router.navigateByUrl('/', { replaceUrl: true });
     });
   }
 
-  async changeImage() {
-    const image = await Camera.getPhoto({
-      quality: 90,
-      allowEditing: false,
-      resultType: CameraResultType.Base64,
-      source: CameraSource.Photos, // Camera, Photos or Prompt!
-    });
+  // async changeImage() {
+  //   const image = await Camera.getPhoto({
+  //     quality: 90,
+  //     allowEditing: false,
+  //     resultType: CameraResultType.Base64,
+  //     source: CameraSource.Photos, // Camera, Photos or Prompt!
+  //   });
 
-    if (image) {
-      const loading = await this.loadingController.create();
-      await loading.present();
+  //   if (image) {
+  //     const loading = await this.loadingController.create();
+  //     await loading.present();
 
-      const result = await this.avatarService.uploadImage(image);
-      loading.dismiss();
+  //     const result = await this.avatarService.uploadImage(image);
+  //     loading.dismiss();
 
-      if (!result) {
-        const alert = await this.alertController.create({
-          header: 'Upload failed',
-          message: 'There was a problem uploading your avatar.',
-          buttons: ['OK'],
-        });
-        await alert.present();
-      }
-    }
-  }
-
-  // getEstudiantes() {
-  //   this.firestore.getCollection();
+  //     if (!result) {
+  //       const alert = await this.alertController.create({
+  //         header: 'Upload failed',
+  //         message: 'There was a problem uploading your avatar.',
+  //         buttons: ['OK'],
+  //       });
+  //       await alert.present();
+  //     }
+  //   }
   // }
+
+
 
   crearNuevoResultado() {
 
     this.interaction.showLoading('Guardando ...')
-    // const datos: Datos = {
-    //   informacionUsuario: {
-    //     nombre: 'miguel Cuenca',
-    //     cedula: '1724518087',
-    //     telefono: 983873954
-    //   },
-    //   informacionCensado: {
-    //     nombre: 'jorge ulloa',
-    //     cedula: '1234567894',
-    //     miembros: 3,
-    //     fotos: 'https://concepto.de/wp-content/uploads/2015/08/familia-extensa-e1591818033557.jpg',
-    //     geolocalizacion: '-0.1615789,-78.4845747,19z',
-    //   }
-    // }
+
     const path = 'users';
     const id = this.firestore.getId();
     this.data.informacionCensado.id = id;
@@ -160,6 +133,7 @@ export class HomePage {
       reader.readAsDataURL(event.target.files[0]);
     }
   }
+
 
   async addDirection() {
 

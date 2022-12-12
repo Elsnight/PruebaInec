@@ -7,13 +7,35 @@
       </ion-button>
 
     </ion-buttons>
-    <ion-title> My Profile </ion-title>
+    <ion-title> Censo 2022 </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <ion-card>
+    <img alt="Silhouette"
+      src="https://www.ecuadorencifras.gob.ec/estadisticas/images/logo%20censo%20ecuador-01.png?crc=251941702" />
+    <ion-card-header>
+      <ion-card-title>Censista</ion-card-title>
+      <ion-card-subtitle>Recuerda llenar tus datos amigo censador.</ion-card-subtitle>
+    </ion-card-header>
+    <ion-item>
+      <ion-label>Nombre:</ion-label>
+      <ion-input [(ngModel)]="data.informacionUsuario.nombre"></ion-input>
+    </ion-item>
 
+    <ion-item>
+      <ion-label>Numero cedula:</ion-label>
+      <ion-input [(ngModel)]="data.informacionUsuario.cedula"> </ion-input>
+    </ion-item>
+    <ion-card-header>
+      <ion-card-title>Familia a censar. </ion-card-title>
+      <ion-card-subtitle>Recuerda llenar todos los datos.</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+
+    </ion-card-content>
     <ion-item>
       <ion-label>Nombre:</ion-label>
       <ion-input [(ngModel)]="data.informacionCensado.nombre"></ion-input>
@@ -55,14 +77,9 @@
         </ion-button>
       </ion-buttons>
     </ion-item>
+    <ion-button (click)="crearNuevoResultado()">Guardar
 
-  </ion-card>
-  <ion-button (click)="crearNuevoResultado()">Guardar
-
-  </ion-button>
-</ion-content>
-<ion-content>
-  <ion-card>
+    </ion-button>
     <div *ngFor="let datos of datos">
 
       <h4>
@@ -70,4 +87,5 @@
       </h4>
     </div>
   </ion-card>
+
 </ion-content>

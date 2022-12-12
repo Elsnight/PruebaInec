@@ -2,7 +2,6 @@ export interface Datos {
     informacionUsuario: {
         nombre: string;
         cedula: string;
-        telefono: number;
     }
     informacionCensado: {
         nombre: string;
