@@ -1,4 +1,4 @@
-# FIREBASE : Taller calificado - Android Studio
+# FIREBASE : Prueba - 50% restante de la evaluación
  
   
  - MIGUEL CUENCA
