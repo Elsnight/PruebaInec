@@ -1,0 +1,73 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-button (click)="logout()">
+        <ion-icon slot="icon-only" name="log-out"></ion-icon>
+
+      </ion-button>
+
+    </ion-buttons>
+    <ion-title> My Profile </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+
+    <ion-item>
+      <ion-label>Nombre:</ion-label>
+      <ion-input [(ngModel)]="data.informacionCensado.nombre"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Numero cedula:</ion-label>
+      <ion-input [(ngModel)]="data.informacionCensado.cedula"> </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Miembros:</ion-label>
+      <ion-input [(ngModel)]="data.informacionCensado.miembros"></ion-input>
+    </ion-item>
+
+
+    <ion-item *ngIf="!ingresarEnable">
+      <ion-label class="normal">
+        Foto domicilio:
+      </ion-label>
+      <ion-buttons slot="end">
+        <ion-button>
+          <label for="file-upload">
+            <ion-icon slot="icon-only" name="images"></ion-icon>
+          </label>
+          <input (change)="newImageUpload($event)" id="file-upload" style="display: none" type="file" accept="image/*">
+        </ion-button>
+      </ion-buttons>
+    </ion-item>
+
+
+    <ion-item (click)="addDirection()">
+      <ion-label class="normal">
+        Ubicación
+      </ion-label>
+      <ion-buttons slot="end">
+        <ion-button>
+          <ion-icon slot="icon-only" color="danger" name="location"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-item>
+
+  </ion-card>
+  <ion-button (click)="crearNuevoResultado()">Guardar
+
+  </ion-button>
+</ion-content>
+<ion-content>
+  <ion-card>
+    <div *ngFor="let datos of datos">
+
+      <h4>
+        {{datos.informacionCensado.nombre}} {{datos.informacionCensado.cedula}}
+      </h4>
+    </div>
+  </ion-card>
+</ion-content>
