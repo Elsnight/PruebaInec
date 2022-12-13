@@ -20,20 +20,21 @@ Se puede trabajar en grupos de máximo 4 integrantes, TODOS deben subir los sigu
 
 - video del funcionamiento de la aplicación (uso y código)
 
+Enlace al video: [Video]
 
-Enlace al sitio oficial web: [Adroid developer]
+Enlace al sitio oficial web: [Ionic]
 
 Enlace al sitio oficial web: [Firebase]
 
-  [Adroid developer]: https://developer.android.com/
+  [Video]: https://youtu.be/y96VgXkCYAQ
+  [Ionic]: https://ionicframework.com/docs
   [Firebase]: https://firebase.google.com/docs?hl=es-419
 
 
 EVIDENCIAS DE LA APP
 ========
 
-<img src="https://i.ibb.co/k69PkFj/Screenshot-20220904-212621.png" alt="drawing" width="200"/>
-<img src="https://i.ibb.co/3s836Qm/Screenshot-20220904-211821.png"  alt="drawing" width="200"/>
-<img src="https://i.ibb.co/TwFPBVc/Screenshot-20220904-211812.png" alt="drawing" width="200"/>
-<img src="https://i.ibb.co/PWDNd12/Screenshot-20220904-211731.png" alt="drawing" width="200"/>
-<img src="https://i.ibb.co/5FvrtVt/Screenshot-20220904-211750.png" alt="drawing" width="200"/>
+<img src="https://i.ibb.co/CvMNTxY/Screenshot-20221212-233359.png" alt="drawing" width="200"/>
+<img src="https://i.ibb.co/nmXvxHR/Screenshot-20221212-233458.png"  alt="drawing" width="200"/>
+<img src="https://i.ibb.co/MSGkQFW/Screenshot-20221212-234922.png" alt="drawing" width="200"/>
+
